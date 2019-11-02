@@ -15,9 +15,9 @@ const router: Express = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 
-const server = http.createServer(router);
+const app = http.createServer(router);
 
-server.listen(SERVER_PORT, () => {
+app.listen(SERVER_PORT, () => {
   // tslint:disable-next-line:no-console
   console.log(`Server started at http://localhost:${SERVER_PORT}`);
 });

@@ -2,14 +2,14 @@
   "name": "node_express_ts",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/server.js",
+  "main": "dist/app.js",
   "scripts": {
     "clean": "rimraf dist/*",
     "tsc": "tsc",
     "lint": "",
     "start": "node dist/app.js",
-    "dev": "nodemon src/server.ts",
-    "dev:alt": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "dev": "nodemon src/app.ts",
+    "dev:alt": "tsc-watch --onSuccess \"node ./dist/app.js\"",
     "dev:start": "npm-run-all build start",
     "build": "npm-run-all clean lint tsc -p .",
     "test": "jest --forceExit --coverage --verbose"
@@ -50,7 +50,6 @@
     "shelljs": "^0.8.3",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.4.1",
-    "tslint": "^5.20.0",
     "typescript": "^3.6.4"
   }
 }
