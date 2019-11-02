@@ -20,7 +20,7 @@ tmp
 coverage
 
 # API keys and secrets
-.env.production
+.env
 
 # Dependency directory
 node_modules
