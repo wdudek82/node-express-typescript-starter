@@ -1,12 +1,12 @@
 {
-  "name": "node_express_ts",
+  "name": "node-express-typescript-starter",
   "version": "1.0.0",
   "description": "",
   "main": "dist/app.js",
   "scripts": {
     "clean": "rimraf dist/*",
     "tsc": "tsc",
-    "lint": "",
+    "lint": "eslint --config .eslintrc.js --ext .js,.ts src/",
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts",
     "dev:alt": "tsc-watch --onSuccess \"node ./dist/app.js\"",

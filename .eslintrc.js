@@ -36,6 +36,7 @@ module.exports = {
         ignoreRestSiblings: false,
       },
     ],
+    "no-console": 1,
 
     /* ECMAScript 6 */
     "arrow-body-style": 0,
