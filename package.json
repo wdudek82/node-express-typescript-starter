@@ -7,9 +7,9 @@
     "clean": "rimraf dist/*",
     "tsc": "tsc",
     "lint": "eslint --config .eslintrc.js --ext .js,.ts src/",
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
-    "dev:alt": "tsc-watch --onSuccess \"node ./dist/app.js\"",
+    "start": "nodemon src/app.ts",
+    "start:alt": "tsc-watch --onSuccess \"node ./dist/app.js\"",
+    "start:prod": "node dist/app.js",
     "dev:start": "npm-run-all build start",
     "build": "npm-run-all clean lint tsc -p .",
     "test": "jest --forceExit --coverage --verbose"

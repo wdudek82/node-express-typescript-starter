@@ -5,6 +5,7 @@ import middleware from "./middleware";
 import routes from "./services";
 import dotenv from "dotenv";
 import "reflect-metadata";
+import { Server } from "http";
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ const router: Express = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 
-const app = http.createServer(router);
+const app: Server = http.createServer(router);
 
 app.listen(SERVER_PORT, () => {
   // eslint-disable-next-line no-console
