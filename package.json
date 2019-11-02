@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "tsc": "tsc",
-    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "lint": "",
     "start": "node dist/app.js",
     "dev": "nodemon src/server.ts",
     "dev:alt": "tsc-watch --onSuccess \"node ./dist/server.js\"",
@@ -22,8 +22,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "reflect-metadata": "^0.1.13",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "typeorm": "^0.2.20"
   },
   "devDependencies": {
     "@types/compression": "^1.0.1",
@@ -35,6 +38,9 @@
     "@types/node": "^12.12.5",
     "@types/request-promise": "^4.1.44",
     "@types/shelljs": "^0.8.6",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "eslint": "^6.6.0",
     "fs-extra": "^8.1.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",

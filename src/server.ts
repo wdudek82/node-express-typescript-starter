@@ -4,6 +4,7 @@ import { applyMiddleware, applyRoutes } from "./util";
 import middleware from "./middleware";
 import routes from "./services";
 import dotenv from "dotenv";
+import "reflect-metadata";
 
 dotenv.config();
 
