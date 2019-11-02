@@ -1,9 +1,10 @@
 import dotenv from "dotenv";
 import path from "path";
-import express, { Express, NextFunction, Request, Response } from "express";
+import express, { Express } from "express";
 import * as http from "http";
-import { applyMiddleware } from "./util";
+import { applyMiddleware, applyRoutes } from "./util";
 import middleware from "./middleware";
+import routes from "./routes/index";
 
 const DEBUG = true;
 
@@ -18,13 +19,9 @@ const { SERVER_PORT = 8000 } = process.env;
 
 const router: Express = express();
 applyMiddleware(middleware, router);
+applyRoutes(routes, router);
 
 const server = http.createServer(router);
-
-// define a route handler for the default home page
-router.get("/", (req: Request, res: Response, next: NextFunction): void => {
-  res.send("<h1>Hello, World!:)</h1>");
-});
 
 server.listen(SERVER_PORT, () => {
   // tslint:disable-next-line:no-console
