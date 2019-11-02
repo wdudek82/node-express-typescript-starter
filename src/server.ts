@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 import path from "path";
 import express, { Express, NextFunction, Request, Response } from "express";
 import * as http from "http";
+import { applyMiddleware } from "./util";
+import middleware from "./middleware";
 
 const DEBUG = true;
 
@@ -15,6 +17,8 @@ dotenv.config({
 const { SERVER_PORT = 8000 } = process.env;
 
 const router: Express = express();
+applyMiddleware(middleware, router);
+
 const server = http.createServer(router);
 
 // define a route handler for the default home page
