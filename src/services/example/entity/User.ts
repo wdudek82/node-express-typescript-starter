@@ -1,11 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
 
 @Entity()
-export class User {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
+  @Column({ length: 100 })
   firstName!: string;
 
   @Column()
@@ -13,4 +13,16 @@ export class User {
 
   @Column()
   age!: number;
+
+  @Column("text")
+  description!: string;
+
+  @Column("float", { default: 0.0 })
+  score!: number;
+
+  @Column({ default: false })
+  isStaff!: boolean;
+
+  @Column("timestamp", { nullable: true })
+  deletedAt!: string;
 }
