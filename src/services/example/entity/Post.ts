@@ -12,7 +12,7 @@ export class Post {
   @Column("text")
   body!: string;
 
-  @Column("timestamp")
+  @Column("timestamp", { nullable: true })
   publishedAt!: string;
 
   @ManyToOne(() => User, (user) => user.id)
