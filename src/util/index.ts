@@ -15,9 +15,11 @@ export type Handler = (
   next: NextFunction,
 ) => Promise<void> | void;
 
+type HttpMethod = "get" | "post" | "put" | "patch" | "delete" | "head" | "options"
+
 export interface Route {
   path: string;
-  method: "get" | "post" | "put" | "patch" | "delete" | "head" | "options";
+  method: HttpMethod;
   handler: Handler | Handler[];
 }
 
