@@ -17,7 +17,7 @@
     "src/subscriber/**/*.ts"
   ],
   "cli": {
-    "entitiesDir": "src/entity",
+    "entitiesDir": "src/services/**/entity",
     "migrationsDir": "src/migration",
     "subscribersDir": "src/subscriber"
   }
