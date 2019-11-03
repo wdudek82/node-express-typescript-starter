@@ -11,14 +11,14 @@ dotenv.config();
 
 const { SERVER_PORT = 8000 } = process.env;
 
-const router: Express = express();
+const app: Express = express();
 
-applyMiddleware(middleware, router);
-applyRoutes(routes, router);
+applyMiddleware(middleware, app);
+applyRoutes(routes, app);
 
-const app: Server = http.createServer(router);
+const server: Server = http.createServer(app);
 
-app.listen(SERVER_PORT, () => {
+server.listen(SERVER_PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Server started at http://localhost:${SERVER_PORT}`);
 });
